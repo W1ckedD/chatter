@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 // Pages
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Chat from './pages/Chat';
 
 function App({ auth: { isLoggedIn } }) {
   if (isLoggedIn) {
@@ -20,10 +21,10 @@ function App({ auth: { isLoggedIn } }) {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <h1>Index Page</h1>
+          <Route exact path="/chat">
+            <Chat />
           </Route>
-          <Redirect to="/" />
+          <Redirect to="/chat" />
         </Switch>
       </Router>
     );

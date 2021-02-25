@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { login } from '../store/actions/authActions';
+
 import Card from '../components/Card';
 
-const Login = () => {
+const Login = ({ login }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
+    login({ username, password });
   }
 
   const handleChange = e => {
@@ -53,4 +57,4 @@ const Login = () => {
   );
 }
 
-export default Login;
+export default connect(null, { login })(Login);

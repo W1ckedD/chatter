@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { register } from '../store/actions/authActions';
+
 import Card from '../components/Card';
 
-
-const Register = () => {
+const Register = ({ register }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
+    register({ username, password });
   }
 
   const handleChange = e => {
@@ -68,4 +71,4 @@ const Register = () => {
   );
 }
 
-export default Register;
+export default connect(null, { register })(Register);

@@ -3,7 +3,7 @@ const User = require('../models/user');
 
 exports.requireUserSocket = async (socket, next) => {
   try {
-    const token = socket.handshake.token;
+    const token = socket.handshake.auth.token;
     if (!token) {
       next(new Error('You must be logged in'));
     }
