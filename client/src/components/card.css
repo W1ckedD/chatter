@@ -1,0 +1,12 @@
+.card {
+  padding: 2rem;
+  box-shadow: 0 0 10px #ccc;
+  min-width: 400px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .card {
+    min-width: 300px;
+  }
+}
