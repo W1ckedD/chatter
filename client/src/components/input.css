@@ -1,0 +1,22 @@
+.input-container {
+  min-width: 400px;
+  max-width: 800px;
+  display: flex;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.input-container textarea {
+  height: 50px;
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.input-container textarea:focus {
+  outline: none;
+}
+
+.input-container button {
+  margin: 0 !important;
+}

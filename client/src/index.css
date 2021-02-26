@@ -63,6 +63,20 @@ body {
   width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+.chat-container {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    min-width: 400px;
+    margin: auto;
+    height: 100%;
+}
 
+
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 400px;
+  }
 }

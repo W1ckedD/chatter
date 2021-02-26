@@ -1,0 +1,19 @@
+.message {
+  display: inline;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem;
+}
+
+.message-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.message-head span {
+  font-size: 12px;
+  color: #444;
+}

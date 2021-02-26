@@ -9,6 +9,8 @@ export default (state = initialState, action) => {
         user: action.payload.user,
         isLoggedIn: true
       };
+    case 'LOGOUT':
+      return { ...state, token: '', user: null, isLoggedIn: false };
     default:
       return state;
   }

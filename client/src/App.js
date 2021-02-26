@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -6,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import { connect } from 'react-redux';
+import { checkIfAuthenticated } from './store/actions/authActions';
 
 // Components
 import Navbar from './components/Navbar';
@@ -15,7 +17,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Chat from './pages/Chat';
 
-function App({ auth: { isLoggedIn } }) {
+function App({ auth: { isLoggedIn }, checkIfAuthenticated }) {
+  useEffect(() => {
+    checkIfAuthenticated();
+  }, []);
   if (isLoggedIn) {
     return (
       <Router>
@@ -50,4 +55,4 @@ const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, { checkIfAuthenticated })(App);
