@@ -16,11 +16,10 @@ const Chat = ({ auth: { token }, chat: { messages }, getMessages, updateMessages
 
   useEffect(() => {
     getMessages();
+    socket.on('message-sent', ({ data }) => {
+      updateMessages({ message: JSON.parse(data) });
+    });
   }, []);
-  socket.on('message-sent', ({ data }) => {
-    console.log('incomming message');
-    updateMessages({ message: JSON.parse(data) });
-  });
   return (
     <div className="container">
       <div style={{ height: '80vh' }}>

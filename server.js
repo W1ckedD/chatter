@@ -35,7 +35,7 @@ io.on('connection', socket => {
   socket.on('send-message', async ({ data }) => {
     const msg = JSON.parse(data);
     const message = await Message.create(msg);
-    socket.emit('message-sent', { data: JSON.stringify(message) });
+    io.sockets.emit('message-sent', { data: JSON.stringify(message) });
   })
 
 });
